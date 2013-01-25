@@ -1,0 +1,43 @@
+\input{einstellungen/header}
+
+\title{} %pdf metadata is set praeambel.tex
+\author{}
+
+\begin{document}
+
+% Zeilenabstand für die Verzeichnisse auf normal stellen
+\begin{spacing}{1}
+\include{kapitel/titelseite}
+\include{kapitel/eidesstattliche}
+
+\pagenumbering{Roman}
+\chead{\thepage}
+\def\thesection{\Roman{section}}
+
+\pdfbookmark[1]{Inhaltsverzeichnis}{toc}
+\tableofcontents
+	
+%	\lstlistoflistings
+% 	\listoftables
+\end{spacing}
+
+% Einzelne Kapitel werden per include eingebunden und sind jeweils in einer Unterdatei (ev. Unterkapitel ebenfalls in verschiedene Dateien aufteilen, ist übersichtlicher. Dann aber per \input einbinden, dabei wird keine neue Seite begonnen.
+
+\newpage{}
+\pagenumbering{arabic}
+% \setcounter{section}{0}
+% \def\thesection{\arabic{section}}
+% \setcounter{chapter}{0}
+% \def\thechapter{\arabic{chapter}}
+
+\include{kapitel/einleitung}
+\include{kapitel/kapitel}
+\include{kapitel/zusammenfassung}
+
+\appendix
+\include{kapitel/anhang}
+
+\printbibliography 
+\addcontentsline{toc}{chapter}{Literaturverzeichnis}
+\listoffigures
+\end{document}
