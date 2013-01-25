@@ -1,0 +1,177 @@
+%
+% --| Layout/Structure |--------------------------------------------------
+%
+\renewcommand\newline{\smallskip \\} %Neue Zeile
+\newcommand\newpar{\smallskip \par} %Neue Zeile
+%
+%
+\newcommand{\marginlabel}[1]{\mbox{}\marginline{\hspace{0pt}\RaggedRight\footnotesize #1}}
+%
+% -------------------------------------------------------------------------
+
+% --| Math |-------------------------------------------------------
+% -- new commands --
+\providecommand{\abs}[1]{\lvert#1\rvert}
+\providecommand{\Abs}[1]{\left\lvert#1\right\rvert}
+\providecommand{\norm}[1]{\left\Vert#1\right\Vert}
+\providecommand{\Trace}[1]{\ensuremath{\Tr\{\,#1\,\}}} % Trace /Spur
+%
+
+% -- differentials --
+\renewcommand{\d}{\partial\mspace{2mu}} % partial diff
+\newcommand{\td}{\,\mathrm{d}}	% total diff
+\newcommand{\ddt}[1]{\frac{\td #1}{\td t}}
+
+% -- Abbrevitations --
+%\newcommand{\complex}{\mathbb{C}} % Complex
+%\newcommand{\real}{\mathbb{R}}    % Real
+%\newcommand{\N}{\mathbb{N}}
+%\newcommand{\Z}{\mathbb{Z}}
+
+%
+%\newcommand{\Ham}{\mathcal{H}}    % Hamilton
+%\newcommand{\unity}{\mathds{1}}   % Real
+%
+
+% -- New Operators --
+%\DeclareMathOperator{\rot}{rot}
+%\DeclareMathOperator{\grad}{grad}
+%\renewcommand{\div}{\text{div}\,}
+%\DeclareMathOperator{\Tr}{Tr}
+%\DeclareMathOperator{\e}{e} 			% exponatial Function
+
+% -- new symbols --
+\newcommand{\laplace}{\Delta}
+\newcommand{\dalembert}{\Box}
+
+
+% --| Physics |--------------------------------
+% (adopted from phystex by Florian Jung)
+\newcommand\evec[1]{{\Hat{\vec{#1}}}}
+\newcommand\op[1]{{\hat{\mathrm{#1}}}}  % Operator
+\newcommand\vop[1]{{\Hat{\mathbf{#1}}}} % Vector Operator
+%
+\newcommand\bra[1]{\ensuremath{\left\langle{#1}%
+	\mspace{1mu}\right\rvert\mspace{1mu}}} % Bra
+%
+\newcommand\ket[1]{\ensuremath{\mspace{1mu}\left\lvert\mspace{1mu}%
+	{#1}\right\rangle}} % Ket
+%
+\newcommand\bracket[2]{\ensuremath{%						% Bra-Ket < | >
+    \left\langle{#1}\mkern1.2mu\vert\mkern1.2mu{#2}\right\rangle}}
+%
+\newcommand\ketbra[2]{\ensuremath{%							% Ket-Bra | >< |
+	\left\lvert\mspace{1mu}{#1}\right\rangle % Ket
+	\mspace{-2mu}%
+	\left\langle{#2}\mspace{1mu}\right\rvert % Bra
+}}
+%
+\newcommand\expect[1]{\ensuremath{\left\langle{#1}\right\rangle}} %
+\newcommand\smallexpect[1]{\ensuremath{\langle{#1}\rangle}} % Expectationvalue
+%
+\newcommand{\mean}[1]{\ensuremath{\overline{#1}}} % mean value
+%
+\newcommand{\state}[1]{\ensuremath{\ket{#1}}}
+%
+\newcommand\commutator[2]{\ensuremath{\mathinner{%
+    \mathopen[\,#1,#2\,\mathclose]}}}
+\newcommand{\Commutator}[2]{\ensuremath{\left[\,#1,#2\,\right]}}
+\newcommand{\bigcommutator}[2]{\ensuremath{\bigl[\,#1,#2\,\bigr]}}
+\newcommand{\Bigcommutator}[2]{\ensuremath{\Bigl[\,#1,#2\,\Bigr]}}
+%
+\newcommand\poisson[2]{\mathinner{%
+    \mathopen\{#1,#2\mathclose\}}}
+%
+
+
+% --| Quantum Optics |-------------------------------------------------------
+
+% -- Abbrevitations --
+% \newcommand{\hc}{\,h.\,c.\,}
+%\newcommand{\cc}{\quad c.\,c.\,}
+
+
+% ------------------------------------------------------------------------------
+% Umbenennungen von englischen �berschriften
+
+%\renewcommand{\glossaryname}{Glossar} % benennt das Glossar vom englischen Titel "`Glossary"' nach "`Glossar"' um
+%\renewcommand{\acronymname}{Abk"urzungsverzeichnis}
+
+% ------------------------------------------------------------------------------
+% Schriftanpassungen
+
+% Schrift von Description-Umgebung auf normale Schrift aber fett setzen
+\setkomafont{descriptionlabel}{\normalfont\bfseries}
+
+%Schriften�nderungen: KOMA benutzt f�r die �berschriften eine serifenlose Schrift. Ich finde die Mischung- vor allem auf der Ebene subsubsection, wo die Schriftgr��e der �berschrift die gleiche wie die des Flie�textes ist, jedoch nicht sch�n. Nur diese �berschrift �ndern ist auch nicht sch�n, deswegen werden alle �berschriften in ihrer voreingestellten Gr��e, fett und *mit* Serifen gesetzt - in der normalen Schriftart.
+
+\setkomafont{chapter}{\normalfont\bfseries\huge}
+\setkomafont{section}{\normalfont\bfseries\Large}
+\setkomafont{subsection}{\normalfont\bfseries\large}
+\setkomafont{subsubsection}{\normalfont\bfseries}
+
+%\setkomafont{pagehead}{\small\sffamily\slshape}        % Kopfzeile
+%\setkomafont{pagenumber}{\bfseries\sffamily}             % Seitenzahl
+%\setkomafont{sectioning}{\sffamily} %\rmfamily\bfseries  % Titelzeilen
+%\setkomafont{caption}{\small}                          % Schrift f�r Caption
+\setkomafont{captionlabel}{\normalfont\bfseries\small}   % Schrift f�r 'Abbildung' usw.
+
+% Glossartitel
+%\renewcommand{\entryname}{Kürzel}
+%\renewcommand{\descriptionname}{Beschreibung}
+
+
+% --- Anpassungen fürs Literaturverzeichnis
+
+   % % Change Layout of Backref
+%   \renewcommand*{\backref}[1]{%
+   	% default interface
+   	% #1: backref list
+   	%
+   	% We want to use the alternative interface,
+   	% therefore the definition is empty here.
+%   }%
+%   \renewcommand*{\backrefalt}[4]{%
+   	% alternative interface
+   	% #1: number of distinct back references
+   	% #2: backref list with distinct entries
+   	% #3: number of back references including duplicates
+   	% #4: backref list including duplicates
+   	
+   	
+%   	\ifnum#1>0                   % <---
+%   	\mbox{
+%   	(Zitiert auf %
+%   	\ifnum#1=1 %
+%		   Seite~%
+%	   \else
+%   		Seite~%
+%   	\fi
+%   	#2)
+   	%}
+%   	\fi                              % <----
+   	%
+%   }
+
+
+%
+% WORKAROUND, damit lstlistoflistings funktioniert:
+% Quelle: http://www.komascript.de/node/477
+%
+\makeatletter% --> De-TeX-FAQ
+\renewcommand*{\lstlistoflistings}{%
+\begingroup
+\if@twocolumn
+\@restonecoltrue\onecolumn
+\else
+\@restonecolfalse
+\fi
+\lol@heading
+\setlength{\parskip}{\z@}%
+\setlength{\parindent}{\z@}%
+\setlength{\parfillskip}{\z@ \@plus 1fil}%
+\@starttoc{lol}%
+\if@restonecol\twocolumn\fi
+\endgroup
+}
+\makeatother% --> \makeatletter

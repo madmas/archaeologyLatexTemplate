@@ -1,0 +1,248 @@
+% ------------------------------------------------------------------------
+% Latex - Einstellungen **************************************************
+% ------------------------------------------------------------------------
+% ========================================================================
+
+
+%
+% - �ndern von Schriftschnitten - (Muss ganz am Anfang stehen !) -----
+\usepackage{fix-cm}
+% Siehe auch Dokumentation: http://home.vr-web.de/was/x/fix-cm.pdf
+% 
+%---------------------------------------------------------------------
+\usepackage{calc} % Zum Rechnen innerhalb von Latex
+% ----------------------------------------------------------------------------------------------
+
+%EURO
+\usepackage{eurosym}
+
+% --- Schriften ---
+
+\usepackage{mathpazo}
+\usepackage{helvet}
+\usepackage{courier}
+
+% ----------------------------------------------------------------------------------------------
+
+% --- Bild- und Tabellenunterschriften --- 
+\usepackage[margin=10pt, font=small, labelfont=bf, format=plain]{caption}
+
+% ----------------------------------------------------------------------------------------------
+
+% --- Sprache --- 
+\usepackage[german]{babel}
+\usepackage[T1]{fontenc}
+%\usepackage[latin1]{inputenc}
+\usepackage[utf8]{inputenc}
+
+%----------------------------------------------------------------------------------------------
+
+
+%% Seitenlayout ================================================================================
+
+% --- Zeilenabstand --- 
+\usepackage{setspace}
+\onehalfspace        % 1,5-facher Abstand  
+
+
+% --- Kopfzeilen ---
+% Linien auf alle Seiten oben und unten um Kopf- und Fu�zeilen abzutrennen
+\usepackage[headsepline, plainheadsepline, footsepline, plainfootsepline]{scrpage2}
+
+% Seite mit Headern
+\pagestyle{scrheadings}
+%
+% l�scht voreingestellte Stile
+\clearscrheadings
+\clearscrplain
+%
+% Was steht wo...
+
+\ohead[\headmark]{\headmark}
+\rofoot[\pagemark]{\pagemark}
+
+\automark{chapter}
+
+\setlength{\headheight}{1.5\baselineskip}
+
+
+% --- Linien ---
+\setheadsepline{.4pt}
+\setfootsepline{.4pt} 
+
+% ----------------------------------------------------------------------------------------------
+
+
+% --- Inhaltsverzeichnis --- 
+\setcounter{secnumdepth}{3}  % Abbildungsnummerierung mit größerer Tiefe
+\setcounter{tocdepth}{2}	% Inhaltsverzeichnis mit größerer Tiefe
+
+% ----------------------------------------------------------------------------------------------
+
+
+%% Bilder und Graphiken ======================================================================
+
+% --- Bilder --- 
+\usepackage{graphicx}
+
+%
+% --- ps4pdf --- 
+%
+% This package allows the use of Postscript commands in PDF Mode (pdflatex)
+% Therefore the Command %\PSforPDF{...} is requibefore each PS-using Command
+% i.e. all includefigure, color-commands, and the corresponding usepackages
+%
+%\usepackage{ps4pdf}
+
+% --- Bilder einbilden --- 
+%
+\usepackage{subfigure}        % Bilder nebeneinander
+% \usepackage{subfig}
+\usepackage[rflt]{floatflt}   % Stellt Befehlt 'floatingfigure' zur Verf�gung
+                              % [rflt] - Standard float auf der rechten Seite
+\usepackage{wrapfig}
+
+%~~~~~~~~~~~~~~~~~~~! PSforPDF ! ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+%\PSforPDF{
+% *** Graphen ******************************
+%%\usepackage{pst-plot}
+%\usepackage{psfrag}
+%-------------------------------------------
+%} % End PSforPDF
+%~~~~~~~~~~~~~~~~~~~! PSforPDF ! ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+%----------------------------------------------------------------------------------------------
+
+
+%% Mathe =======================================================================================
+
+% --- Mathematik ---
+%
+% \usepackage[sumlimits,intlimits,namelimits]{amsmath}
+
+
+% --- Symbole ---
+\usepackage{amssymb}
+% ----------------------------------------------------------------------------------------------
+
+%% sonstige Pakete =============================================================================
+%
+% --- Glossar ---
+%\usepackage[style=long,border=none,header=plain,cols=2, number=none, hypertoc=true, acronym=false, global=true]{glossary}   %
+%\setacronymnamefmt{\gloshort}  % setzt den ersten Wert im Abk�rzungsverzeichnis auf die Abk�rzung selbst
+%\setacronymdescfmt{%\glolong: %\glodesc}
+%\makeacronym
+%\makeglossary
+
+
+% Entweder alle Glossareintr�ge in eine extra Datei oder in die normalen Text-Dateien
+%\input{glossar/glossar}
+
+%\usepackage{makeidx}	% Index
+% \usepackage{minitoc}	% Inhaltsverzeichnis vor jedem Kapitel
+
+% --- Listen --- 
+\usepackage{enumerate}  % Optionen [a)], [i)] usw.
+\usepackage{mdwlist}	% Geringerer Abstand zwischen den Punkten
+%
+% --- Tabellen --- 
+\usepackage{array}
+\usepackage{tabularx}   % Erweiterte Tabellen Optionen
+\usepackage{booktabs}
+
+\usepackage{lscape}
+
+% --- Dokument --- 
+
+% Besseres Darstellen der URLs: Umbruch m�glich, verlinkt mit hyperref-Package
+\usepackage[hyphens]{url}
+\urlstyle{same} % normale Schriftart. Wenn das weggelassen wird, wird eine tt-Schriftart benutzt
+\usepackage{soul}		% Unterstreichen, Sperren
+
+\usepackage{color} % Farbiger Text 
+\definecolor{DarkBlue}{rgb}{0.0,0.0,0.5} 
+\definecolor{DarkRed}{rgb}{0.5,0.0,0.0} 
+
+% --- PDF --- 
+\usepackage[pdfborder=false]{hyperref}  % Stellt Verlinkungen im Dokument her (Inhaltsverzeichnis, Quellenangaben, etc.), ohne einen Rand um die Links zu ziehen (und ohne sie farbig zu machen)
+%
+\hypersetup{    pdfauthor={Autorname},
+                pdftitle={Titel des Dokuments},
+                pdfsubject={},
+                pdfproducer={},
+	 	pdfkeywords={},
+		pdfpagelayout=TwoColumnLeft,
+                 linkcolor=black,        %% for links on same page
+                 citecolor=black, 
+                pagecolor=black,          %% for links to other pages
+                urlcolor=black,          %% links to URLs
+%                 breaklinks=true,        %% allow links to break across lines!
+                 colorlinks=true, %true, %false,       %% obviously inverted logic :-(
+%                 citebordercolor=0 0.5 0,        %% color for \cite
+%                 filebordercolor=0 0.5 0,
+%                 linkbordercolor=0.5 0 0,
+%                 menubordercolor=0.5 0 0,
+%                 pagebordercolor=0.5 0.5 0,
+%                 urlbordercolor=0 0.5 0.5,
+%                 pdfhighlight=/I,
+%                 pdfborder=0 0 0.5,      %% to show _really_ only a box
+                                        %% around the links and not a
+                                        %% filled recangle
+%                 backref=true,
+ %                pagebackref=true,
+                 bookmarks=true,
+                 bookmarksopen=false,
+                 bookmarksnumbered=true
+}
+
+% --- System --- 
+\usepackage{mparhack}
+\usepackage{xspace}
+
+%----------------------------------------------------------------------------------------------
+
+% --- @ zu einem TeX Zeichen machen --- 
+\makeatletter %%%%%%%%%%%%%%%%%%%%
+% --------------------------------
+
+% --- Caption f�r nicht-flie�enden Figure Umgebung --- 
+\newcommand\figcaption{\def\@captype{figure}\caption}
+\newcommand\tablecaption{\def\@captype{table}\caption}
+
+% ----------------------------------------------------------------------------------------------
+\usepackage{color}
+\definecolor{Gray}{gray}{0.5}
+
+
+\usepackage{listings}
+\lstset{captionpos=b,frame=shadowbox,rulesepcolor=\color{Gray}}
+
+%\normalcolor
+\listfiles
+
+\usepackage[citestyle=authoryear-comp,bibstyle=authortitle,sorting=nyt,dashed=false,%
+    maxcitenames=1]{biblatex}
+
+\newcounter{mymaxcitenames}
+\AtBeginDocument{%
+  \setcounter{mymaxcitenames}{\value{maxnames}}%
+}
+
+\renewbibmacro*{begentry}{%
+  \printtext[brackets]{%
+    \begingroup
+    \defcounter{maxnames}{\value{mymaxcitenames}}%
+    \printnames{labelname}%
+    \setunit{\nameyeardelim}%
+    \usebibmacro{cite:labelyear+extrayear}%
+    \endgroup
+    }%
+  \quad% or \addspace
+}
+
+\DeclareNameAlias{sortname}{first-last}
+%\DefineBibliographyStrings{german}{andothers={et\ al\adddot}} % aus u.a. zu et al. machen
+%\DefineBibliographyStrings{ngerman}{and={\&}} % aus und zu & machen
+\DefineBibliographyStrings{german}{and={--}}
+
+% Literaturverzeichnis einfuegen, Verweis ins Inhaltsverzeichnis
+\bibliography{literatur/literatur}
